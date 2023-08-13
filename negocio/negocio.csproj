@@ -42,7 +42,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CategoriaNegocio.cs" />
-    <Compile Include="EmailService.cs" />
     <Compile Include="FavoritosNegocio.cs" />
     <Compile Include="MarcasNegocio.cs" />
     <Compile Include="ArticulosNegocio.cs" />

@@ -4,6 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
+using System.Configuration;
+
+
 namespace accesoriosSeguridad
 {
     public class AccesoDatos
@@ -20,7 +23,8 @@ namespace accesoriosSeguridad
         {
             try
             {
-                conn = new SqlConnection("server = .\\SQLEXPRESS ; database = CATALOGO_WEB_DB ; integrated security = true");
+                conn = new SqlConnection(ConfigurationManager.AppSettings["cadenaConexion"]);
+                //conn = new SqlConnection("server = .\\SQLEXPRESS ; database = CATALOGO_WEB_DB ; integrated security = true");
                 comando = new SqlCommand();
             }
             catch (Exception ex)
