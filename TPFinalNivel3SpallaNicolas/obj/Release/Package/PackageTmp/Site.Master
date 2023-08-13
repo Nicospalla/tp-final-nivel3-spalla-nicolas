@@ -1,0 +1,71 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="TPFinalNivel3SpallaNicolas.Site" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+</head>
+<body>
+    <form id="form1" runat="server">
+        <nav class="navbar sticky-topz navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="Default.aspx">
+
+                    <img src=".\Images\favicon.png"
+                        alt="img" width="30" height="30">
+                    Inicio</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                        <%if (userActivo == true)
+                            {  %>
+                        <a class="nav-link" href="favoritos.aspx">Favoritos</a>
+                        <%if (userAdmin == true)
+                            {  %>
+                        <a class="nav-link" href="listado.aspx">Grilla</a>
+                        <a class="nav-link" href="modificar.aspx">Agregar</a>
+
+                        <%}
+                            } %>
+                    </div>
+                </div>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <%if (Session["userActivo"] == null)
+                            {%>
+                        <a class="nav-link" href="login.aspx">Login</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="registro.aspx">Registro</a>
+                    </li>
+                    <%}
+                        else
+                        {%>
+                    <li>
+                        <a class="nav-link" href="miPerfil.aspx">Mi Perfil</a>
+                    </li>
+                    <li>
+                        <asp:Button ID="btnCerrarSesion" OnClick="btnCerrarSesion_Click" runat="server" CssClass="nav-link" Text="Cerrar Sesión" />
+                    </li>
+                    <%} %>
+                </ul>
+            </div>
+        </nav>
+        <div class="row" style="height: 5px;">
+            <hr />
+        </div>
+        <div class="container-fluid">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+</body>
+</html>

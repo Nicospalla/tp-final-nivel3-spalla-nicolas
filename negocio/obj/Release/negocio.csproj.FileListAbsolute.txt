@@ -1,0 +1,11 @@
+C:\Users\nicos\source\repos\TPFinalNivel3SpallaNicolas\negocio\bin\Release\negocio.dll
+C:\Users\nicos\source\repos\TPFinalNivel3SpallaNicolas\negocio\bin\Release\negocio.pdb
+C:\Users\nicos\source\repos\TPFinalNivel3SpallaNicolas\negocio\bin\Release\AccesoDatos.dll
+C:\Users\nicos\source\repos\TPFinalNivel3SpallaNicolas\negocio\bin\Release\dominio.dll
+C:\Users\nicos\source\repos\TPFinalNivel3SpallaNicolas\negocio\bin\Release\AccesoDatos.pdb
+C:\Users\nicos\source\repos\TPFinalNivel3SpallaNicolas\negocio\bin\Release\dominio.pdb
+C:\Users\nicos\source\repos\TPFinalNivel3SpallaNicolas\negocio\obj\Release\negocio.csproj.AssemblyReference.cache
+C:\Users\nicos\source\repos\TPFinalNivel3SpallaNicolas\negocio\obj\Release\negocio.csproj.CoreCompileInputs.cache
+C:\Users\nicos\source\repos\TPFinalNivel3SpallaNicolas\negocio\obj\Release\negocio.csproj.CopyComplete
+C:\Users\nicos\source\repos\TPFinalNivel3SpallaNicolas\negocio\obj\Release\negocio.dll
+C:\Users\nicos\source\repos\TPFinalNivel3SpallaNicolas\negocio\obj\Release\negocio.pdb

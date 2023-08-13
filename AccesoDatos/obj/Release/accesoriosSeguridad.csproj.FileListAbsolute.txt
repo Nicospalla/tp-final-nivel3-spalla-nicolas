@@ -1,0 +1,6 @@
+C:\Users\nicos\source\repos\TPFinalNivel3SpallaNicolas\AccesoDatos\bin\Release\AccesoDatos.dll
+C:\Users\nicos\source\repos\TPFinalNivel3SpallaNicolas\AccesoDatos\bin\Release\AccesoDatos.pdb
+C:\Users\nicos\source\repos\TPFinalNivel3SpallaNicolas\AccesoDatos\obj\Release\accesoriosSeguridad.csproj.AssemblyReference.cache
+C:\Users\nicos\source\repos\TPFinalNivel3SpallaNicolas\AccesoDatos\obj\Release\accesoriosSeguridad.csproj.CoreCompileInputs.cache
+C:\Users\nicos\source\repos\TPFinalNivel3SpallaNicolas\AccesoDatos\obj\Release\AccesoDatos.dll
+C:\Users\nicos\source\repos\TPFinalNivel3SpallaNicolas\AccesoDatos\obj\Release\AccesoDatos.pdb

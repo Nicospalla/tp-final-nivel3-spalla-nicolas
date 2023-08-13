@@ -93,7 +93,7 @@ namespace negocio
 
             try
             {
-                datos.setearProcedimiento("modificarArt");
+                datos.setearConsulta("UPDATE ARTICULOS set Codigo = @Codigo, Nombre = @Nombre, Descripcion = @Descripcion, IdMarca = @IdMarca, IdCategoria = @IdCategoria, ImagenUrl = @ImagenUrl, Precio = @Precio where Id = @Id");
                 datos.setearParametros("@Id", aux.Id);
                 datos.setearParametros("@Codigo", aux.Codigo);
                 datos.setearParametros("@Nombre", aux.Nombre);
