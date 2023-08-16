@@ -44,8 +44,12 @@ namespace TPFinalNivel3SpallaNicolas
                     Users activo = (Users)Session["userActivo"];
                     txtNombre.Text = activo.Nombre != null ? activo.Nombre : "";
                     txtApellido.Text = activo.Apellido != null ? activo.Apellido : "";
-                    txtUrlImagen.Text = activo.UrlImagenPerfil != null && activo.UrlImagenPerfil != noFoto ? activo.UrlImagenPerfil : "";
-                    imagenPerfil.ImageUrl = activo.UrlImagenPerfil != null ? activo.UrlImagenPerfil : noFoto;
+                    if(activo.UrlImagenPerfil.StartsWith("http"))
+                        imagenPerfil.ImageUrl = activo.UrlImagenPerfil;
+                    else if(usersNegocio.validaImg(activo))
+                        imagenPerfil.ImageUrl = "~/Images/" + activo.UrlImagenPerfil != "" ? "~/Images/" + activo.UrlImagenPerfil : noFoto;
+                    //txtUrlImagen.Text = activo.UrlImagenPerfil != null && activo.UrlImagenPerfil != noFoto ? activo.UrlImagenPerfil : "";
+                    //imagenPerfil.ImageUrl = activo.UrlImagenPerfil != null ? activo.UrlImagenPerfil : noFoto;
                     txtEmail.Text = activo.Email;
 
                 }
@@ -102,17 +106,55 @@ namespace TPFinalNivel3SpallaNicolas
             }
         }
 
-
+        private bool validaPass(string pass1, string pass2)
+        {
+            if (!string.IsNullOrEmpty(pass1) && !string.IsNullOrEmpty(pass2) && pass1 == pass2)
+                return true;
+            else
+                return false;
+        }
         protected void btnGuardarPerfil_Click(object sender, EventArgs e)
         {
+            if (!string.IsNullOrEmpty(txtPass.Text))
+            {
+                if (!validaPass(txtPass.Text, txtPass2.Text))
+                {
+                    lblPass.Text = "Las contraseñas no coinciden!";
+                    return;
+                }
+                else
+                    lblPass.Text = "";
+            }
+            else
+            {
+                lblPass.Text = "";
+            }
+            string ruta = Server.MapPath("./Images/");
             Users aux = (Users)Session["userActivo"];
             try
             {
                 aux.Nombre = txtNombre.Text.ToString();
                 aux.Apellido = txtApellido.Text.ToString();
-                aux.Pass = (!string.IsNullOrEmpty(txtPass.Text) && txtPass.Text == txtPass2.Text ? txtPass.Text.ToString() : aux.Pass);
-                aux.UrlImagenPerfil = txtUrlImagen.Text;
+                aux.Pass = validaPass(txtPass.Text,txtPass2.Text) ? txtPass.Text  : aux.Pass;
+                if (inputPerfil.PostedFile.FileName != "")
+                {
+                    inputPerfil.PostedFile.SaveAs(ruta + "Perfil-" + aux.Id + ".jpg");
+                    aux.UrlImagenPerfil = "Perfil-" + aux.Id + ".jpg";
+                    
+                }
                 usersNegocio.modifUser(aux);
+
+                if (usersNegocio.validaImg(aux))
+                {
+                    Image img = (Image)Master.FindControl("imgAvatar");
+                    img.ImageUrl = "~/Images/" + aux.UrlImagenPerfil;
+                    imagenPerfil.ImageUrl = "~/Images/" + aux.UrlImagenPerfil != "" ? aux.UrlImagenPerfil : "~/Images/perfilNoFoto.jpg";
+                }
+                else
+                {
+                    imagenPerfil.ImageUrl = "~/Images/perfilNoFoto.jpg";
+                }
+
                 Response.Redirect("Default.aspx", false);
 
             }
@@ -125,14 +167,5 @@ namespace TPFinalNivel3SpallaNicolas
 
         }
 
-        protected void txtUrlImagen_TextChanged(object sender, EventArgs e)
-        {
-            if (txtUrlImagen.Text != "")
-                imagenPerfil.ImageUrl = txtUrlImagen.Text;
-            else
-                imagenPerfil.ImageUrl = "./images/perfilNoFoto.jpg";
-            
-            //ViewState["PasswordValue"] = txtPass.Text;
-        }
     }
 }

@@ -55,6 +55,8 @@
                         <asp:Button ID="btnCerrarSesion" OnClick="btnCerrarSesion_Click" runat="server" CssClass="nav-link" Text="Cerrar Sesión" />
                     </li>
                     <%} %>
+                    <asp:Image ID="imgAvatar" ImageUrl="https://img.freepik.com/iconos-gratis/hombre_318-677829.jpg" Style="height: 35px; width: 35px; border-radius: 50%;"
+                        runat="server" />
                 </ul>
             </div>
         </nav>

@@ -258,13 +258,13 @@ namespace TPFinalNivel3SpallaNicolas
         protected global::System.Web.UI.WebControls.Label LabellblTxtPrecio;
 
         /// <summary>
-        /// Control txtUrlImagen.
+        /// Control inputImgPerfil.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtUrlImagen;
+        protected global::System.Web.UI.HtmlControls.HtmlInputFile inputImgPerfil;
 
         /// <summary>
         /// Control imagenPerfil.

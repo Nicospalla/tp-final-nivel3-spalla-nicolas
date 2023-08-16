@@ -1,4 +1,5 @@
 ﻿using dominio;
+using negocio;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,8 +13,12 @@ namespace TPFinalNivel3SpallaNicolas
     {
         public bool userActivo { get; set; }
         public bool userAdmin { get; set; }
+        public string auxPic { get; set; }
         protected void Page_Load(object sender, EventArgs e)
         {
+            UsersNegocio usersNegocio = new UsersNegocio();
+            auxPic = "https://img.freepik.com/iconos-gratis/hombre_318-677829.jpg";
+
             if (Session["userActivo"] != null && ((Users)Session["userActivo"]).Admin == true)
             {
                 userActivo = true;
@@ -22,6 +27,8 @@ namespace TPFinalNivel3SpallaNicolas
             {
                 userActivo = true;
             }
+            if(Session["userActivo"] != null)
+                imgAvatar.ImageUrl = usersNegocio.validaImg((Users)Session["userActivo"])  ? "~/Images/" + ((Users)Session["userActivo"]).UrlImagenPerfil : auxPic;
         }
 
         protected void btnCerrarSesion_Click(object sender, EventArgs e)

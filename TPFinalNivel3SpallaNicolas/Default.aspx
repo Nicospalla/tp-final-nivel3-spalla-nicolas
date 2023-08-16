@@ -37,7 +37,7 @@
                     {%>
                 <div class="card">
                     <img class="card-img-top" style="min-height: 15em; max-height: 15em;"
-                        src="<%:aux.ImagenUrl != "" ? aux.ImagenUrl : "./images/noFoto2.jpg" %>" alt="Imagen Articulo">
+                        src="<%:aux.ImagenUrl != null ? "./ProductsImages/" + aux.ImagenUrl.ToString()  : "./Images/NoFoto.jpg" %>" alt="Imagen Articulo">
                     <div class="card-body" style="display: flex; flex-direction: column; justify-content: space-between;">
                         <h5 class="card-title"><%:aux.Nombre %></h5>
                         <h6 class="card-title">Precio: <%:aux.Precio %></h6>

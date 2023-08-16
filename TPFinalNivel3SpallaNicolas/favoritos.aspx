@@ -32,6 +32,7 @@
                     </asp:Repeater>
                 </div>
             </div>
+            <asp:Label ID="lblVacio" Font-Size="Large" Font-Italic="true" style="text-align-last: center; margin-top:3em" runat="server" Text=""></asp:Label>
             <div class="col-2"></div>
         </div>
     </div>

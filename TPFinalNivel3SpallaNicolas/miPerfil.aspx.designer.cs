@@ -60,6 +60,15 @@ namespace TPFinalNivel3SpallaNicolas
         protected global::System.Web.UI.WebControls.TextBox txtPass;
 
         /// <summary>
+        /// Control lblPass.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblPass;
+
+        /// <summary>
         /// Control txtPass2.
         /// </summary>
         /// <remarks>
@@ -78,13 +87,13 @@ namespace TPFinalNivel3SpallaNicolas
         protected global::System.Web.UI.WebControls.Button btnGuardarPerfil;
 
         /// <summary>
-        /// Control txtUrlImagen.
+        /// Control inputPerfil.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtUrlImagen;
+        protected global::System.Web.UI.HtmlControls.HtmlInputFile inputPerfil;
 
         /// <summary>
         /// Control imagenPerfil.

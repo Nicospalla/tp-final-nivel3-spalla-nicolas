@@ -33,6 +33,12 @@ namespace TPFinalNivel3SpallaNicolas
                     repeaterArticulos.DataSource = negocio.listar(0, (((Users)Session["userActivo"]).Id));
                     repeaterArticulos.DataBind();
                     //listaArticulos = negocio.listar(0, (((Users)Session["userActivo"]).Id));
+                    if (negocio.listar(0, (((Users)Session["userActivo"]).Id)).Count == 0)
+                    {
+                        lblVacio.Text = "No tienes aún productos favoritos en tu lista.";
+                        
+                    }
+
                 }
                 catch (Exception ex)
                 {
