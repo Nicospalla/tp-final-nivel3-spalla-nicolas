@@ -124,7 +124,7 @@ namespace negocio
                 datos.setearParametros("@Descripcion", aux.Descripcion);
                 datos.setearParametros("@IdMarca", aux.IdMarca.Id);
                 datos.setearParametros("@IdCategoria", aux.IdCategoria.Id);
-                datos.setearParametros("@ImagenUrl", aux.ImagenUrl);
+                datos.setearParametros("@ImagenUrl", aux.ImagenUrl != null ? aux.ImagenUrl : (object)DBNull.Value );
                 datos.setearParametros("@Precio", aux.Precio);
                 return datos.ejecutarAccionInt();
             }
@@ -192,9 +192,26 @@ namespace negocio
             {
                 datos.cerrarConn();
             }
-
-
-
         }
+
+        public void actualizaImg(int id)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.setearConsulta("UPDATE ARTICULOS set ImagenUrl = @imagenUrl where Id = @Id");
+                datos.setearParametros("@imagenUrl", "Producto-" + id + ".jpg");
+                datos.setearParametros("@Id", id);
+                datos.ejecutarAccion();
+                
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }finally { datos.cerrarConn(); }
+        }
+
+        
     }
 }

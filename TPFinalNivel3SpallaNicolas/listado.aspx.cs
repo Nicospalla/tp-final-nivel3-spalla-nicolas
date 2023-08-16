@@ -14,6 +14,7 @@ namespace TPFinalNivel3SpallaNicolas
     {
         public bool confirmaEliminar { get; set; }
         ArticulosNegocio negocio = new ArticulosNegocio();
+        public List<Articulos> lista { get; set; }
         private int auxiliar { get; set; }
 
         protected void Page_Load(object sender, EventArgs e)
@@ -26,11 +27,16 @@ namespace TPFinalNivel3SpallaNicolas
             }
             confirmaEliminar = false;
             listarGrid();
+
+            txtFiltro.Attributes["placeholder"] = "Filtro rápido. Puede filtrar por Categoría, Marca o Código";
         }
+
+        
 
         private void listarGrid()
         {
-            gridView.DataSource = negocio.listar();
+            lista = negocio.listar();
+            gridView.DataSource = lista;
             gridView.DataBind();
         }
         protected void gridView_SelectedIndexChanged(object sender, EventArgs e)
@@ -87,6 +93,29 @@ namespace TPFinalNivel3SpallaNicolas
         {
             confirmaEliminar = false;
             return;
+        }
+
+        protected void btnFiltrar_Click(object sender, EventArgs e)
+        {
+            string filtro = txtFiltro.Text.ToLower();
+            List<Articulos> listaFiltrada = new List<Articulos>();
+            if (filtro.Length > 0)
+            {
+                listaFiltrada = lista.FindAll(x => x.Codigo.ToLower().Contains(filtro) || x.IdMarca.Descripcion.ToLower().Contains(filtro) || x.IdCategoria.Descripcion.ToLower().Contains(filtro));
+
+            }
+            else
+                listaFiltrada = lista;
+           
+            gridView.DataSource = listaFiltrada;
+            gridView.DataBind();
+        }
+
+        protected void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            txtFiltro.Text = "";
+            gridView.DataSource = lista;
+            gridView.DataBind();
         }
     }
 }

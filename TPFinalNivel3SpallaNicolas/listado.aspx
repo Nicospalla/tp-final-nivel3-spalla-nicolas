@@ -8,8 +8,19 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <div class="row" style="margin-top:2%;">
+        <div class="col-2"></div>
+        <div class="col-6">
+            <asp:TextBox ID="txtFiltro" CssClass="form-control" runat="server"></asp:TextBox>
+        </div>
+        <div class="col-2">
+            <asp:Button ID="btnFiltrar" OnClick="btnFiltrar_Click" CssClass="btn btn-outline-secondary" runat="server" Text="Filtrar" />
+            <asp:Button ID="btnLimpiar" OnClick="btnLimpiar_Click" CssClass="btn btn-outline-secondary" runat="server" Text="Restaurar" />
+        </div>
+        <div class="col-2"></div>
+    </div>
     <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
-    <div class="container text-center" style="margin-top: 3%;">
+    <div class="container text-center" style="margin-top: 1%;">
         <asp:GridView ID="gridView" CssClass="table table-hover" runat="server" OnRowDeleting="gridView_RowDeleting" OnSelectedIndexChanged="gridView_SelectedIndexChanged" DataKeyNames="Id" AutoGenerateColumns="false">
             <Columns>
 
@@ -19,7 +30,7 @@
                 <asp:BoundField HeaderText="Precio" DataField="Precio" />
                 <asp:BoundField HeaderText="Categoria" DataField="IdCategoria.Descripcion" />
                 <asp:BoundField HeaderText="Marca" DataField="IdMarca.Descripcion" />
-                <asp:CommandField HeaderText="Modificar" ControlStyle-CssClass="btn btn-outline-primary" ShowSelectButton="true"  />
+                <asp:CommandField HeaderText="Modificar" ControlStyle-CssClass="btn btn-outline-primary" ShowSelectButton="true" />
 
                 <asp:CommandField HeaderText="Eliminar" ControlStyle-CssClass="btn btn-outline-danger" ShowDeleteButton="true" />
             </Columns>
@@ -47,7 +58,7 @@
         <div class="col-1"></div>
         <div class="col">
             <a href="modificar.aspx" class="btn btn-primary">Agregar nuevo</a>
-            
+
         </div>
     </div>
 

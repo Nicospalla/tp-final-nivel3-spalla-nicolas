@@ -202,6 +202,12 @@ namespace negocio
                 
             }
         }
+        public bool validaImg(Users user)
+        {
+            if (user.UrlImagenPerfil != null && user.UrlImagenPerfil != "")
+                return true;
+            else return false;
+        }
     }
 
 
