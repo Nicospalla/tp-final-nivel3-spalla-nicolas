@@ -8,6 +8,7 @@
     
         <div class="col-2"></div>
         <div class="col">
+            <a href="Default.aspx" class="btn btn-secondary">Atrás</a>
             <%if (esFav == true && txtId.Text != "")
                 {%>
             <asp:Button ID="btnQuitarFavoritos" OnClick="btnQuitarFavoritos_Click" CssClass="btn btn-outline-danger" runat="server" Text="Quitar de Favoritos" />

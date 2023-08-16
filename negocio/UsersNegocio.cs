@@ -140,12 +140,13 @@ namespace negocio
         public int nuevoUser (string mail, string pass)
         {
             AccesoDatos datos = new AccesoDatos ();
+            int id;
             try
             {
-                datos.setearConsulta("INSERT into USERS (email, pass, admin) values  (@email, @pass, 0)");
+                datos.setearConsulta("INSERT into USERS (email, pass, admin) output inserted.Id values  (@email, @pass, 0)");
                 datos.setearParametros("@email", mail);
                 datos.setearParametros("@pass", pass);
-                datos.ejecutarAccion();
+                id = datos.ejecutarAccionInt();
             }
             catch (Exception ex)
             {
@@ -155,8 +156,7 @@ namespace negocio
             finally { datos.cerrarConn();
             }
 
-
-            return 1;
+            return id;
         }
 
         public void modifUser (Users aux)
