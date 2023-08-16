@@ -7,6 +7,7 @@
         <div class="col-2"></div>
         <div class="col-4" style="margin-top: 6em;">
             <asp:Label ID="lblError" CssClass="h5" runat="server" Text="Label"></asp:Label>
+            <asp:Label ID="lblErrorDetallado" Font-Size="Smaller" runat="server" Text=""></asp:Label>
         </div>
         <div class="col-2">
             <asp:Image ImageUrl="https://cdn.pixabay.com/photo/2017/02/12/21/29/false-2061132_640.png" Style="width: 300px; height: 300px;"

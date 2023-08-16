@@ -19,7 +19,7 @@
             </div>
             <div class="form-group" style="margin-top: 5%;">
                 <label for="txtNombre">Nombre</label>
-                <asp:TextBox ID="txtNombre" CssClass="form-control" AutoPostBack="true" runat="server"></asp:TextBox>
+                <asp:TextBox ID="txtNombre" CssClass="form-control" runat="server"></asp:TextBox>
             </div>
             <div class="form-group" style="margin-top: 5%;">
                 <label for="txtApellido">Apellido</label>

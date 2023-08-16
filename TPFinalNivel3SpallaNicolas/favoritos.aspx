@@ -14,7 +14,9 @@
                         <ItemTemplate>
                             <div class="card" style="width: 18rem;">
                                 <div class="card-body">
-                                    <img src="<%# Eval("ImagenUrl") %>" style="max-width: -webkit-fill-available; max-height: -webkit-fill-available;" alt="Imagen de Producto" />
+                                    <a href="modificar.aspx?Id=<%# Eval("Id") %>">
+                                    <img src="<%#"./ProductsImages/"+ Eval("ImagenUrl") %>" style="max-width: -webkit-fill-available; max-height: -webkit-fill-available;" alt="Imagen de Producto" />
+                                    </a>
                                     <h5 class="card-title"><%# Eval("Nombre") %></h5>
                                     <h6 class="card-subtitle mb-2 text-muted" style="margin-top: 1px;">U$D<%# Eval("Precio") %></h6>
                                     <p class="card-text"><%# Eval("Descripcion") %></p>

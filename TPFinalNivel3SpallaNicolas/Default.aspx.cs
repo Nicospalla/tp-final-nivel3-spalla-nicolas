@@ -20,7 +20,6 @@ namespace TPFinalNivel3SpallaNicolas
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            
 
             if (Session["listaFiltrada"] == null)
             {

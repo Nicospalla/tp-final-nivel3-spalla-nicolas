@@ -35,9 +35,11 @@
             <div class="row row-cols-xs-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
                 <%foreach (var aux in listaArticulos)
                     {%>
-                <div class="card">
+                    <div class="card">
+                <a href="modificar.aspx?Id=+ <%:aux.Id %>">
                     <img class="card-img-top" style="min-height: 15em; max-height: 15em;"
                         src="<%:aux.ImagenUrl != null ? "./ProductsImages/" + aux.ImagenUrl.ToString()  : "./Images/NoFoto.jpg" %>" alt="Imagen Articulo">
+                  </a>
                     <div class="card-body" style="display: flex; flex-direction: column; justify-content: space-between;">
                         <h5 class="card-title"><%:aux.Nombre %></h5>
                         <h6 class="card-title">Precio: <%:aux.Precio %></h6>

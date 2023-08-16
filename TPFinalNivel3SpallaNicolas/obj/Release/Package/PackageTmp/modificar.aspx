@@ -118,7 +118,8 @@
         </div>
         <div class="mb-3">
             <label for="txtUrlImagen" class="form-label">Url Imagen</label>
-            <asp:TextBox ID="txtUrlImagen" OnTextChanged="txtUrlImagen_TextChanged" AutoPostBack="true" CssClass="form-control" runat="server"></asp:TextBox>
+            <input id="inputImgPerfil" type="file" runat="server" class="form-control"/>
+<%--            <asp:TextBox ID="txtUrlImagen" OnTextChanged="txtUrlImagen_TextChanged" AutoPostBack="true" CssClass="form-control" runat="server"></asp:TextBox>--%>
         </div>
         <div class="mb-3">
             <asp:Image ID="imagenPerfil" Style="max-width: 300px; max-height: 300px;"

@@ -44,10 +44,7 @@ namespace TPFinalNivel3SpallaNicolas
                     Users activo = (Users)Session["userActivo"];
                     txtNombre.Text = activo.Nombre != null ? activo.Nombre : "";
                     txtApellido.Text = activo.Apellido != null ? activo.Apellido : "";
-                    if(activo.UrlImagenPerfil.StartsWith("http"))
-                        imagenPerfil.ImageUrl = activo.UrlImagenPerfil;
-                    else if(usersNegocio.validaImg(activo))
-                        imagenPerfil.ImageUrl = "~/Images/" + activo.UrlImagenPerfil != "" ? "~/Images/" + activo.UrlImagenPerfil : noFoto;
+                    imagenPerfil.ImageUrl = activo.UrlImagenPerfil != null ? "./Images/" + activo.UrlImagenPerfil : noFoto;
                     //txtUrlImagen.Text = activo.UrlImagenPerfil != null && activo.UrlImagenPerfil != noFoto ? activo.UrlImagenPerfil : "";
                     //imagenPerfil.ImageUrl = activo.UrlImagenPerfil != null ? activo.UrlImagenPerfil : noFoto;
                     txtEmail.Text = activo.Email;
@@ -147,12 +144,12 @@ namespace TPFinalNivel3SpallaNicolas
                 if (usersNegocio.validaImg(aux))
                 {
                     Image img = (Image)Master.FindControl("imgAvatar");
-                    img.ImageUrl = "~/Images/" + aux.UrlImagenPerfil;
-                    imagenPerfil.ImageUrl = "~/Images/" + aux.UrlImagenPerfil != "" ? aux.UrlImagenPerfil : "~/Images/perfilNoFoto.jpg";
+                    img.ImageUrl = "./Images/" + aux.UrlImagenPerfil;
+                    imagenPerfil.ImageUrl = "./Images/" + aux.UrlImagenPerfil != "" ? aux.UrlImagenPerfil : "./Images/perfilNoFoto.jpg";
                 }
                 else
                 {
-                    imagenPerfil.ImageUrl = "~/Images/perfilNoFoto.jpg";
+                    imagenPerfil.ImageUrl = "./Images/perfilNoFoto.jpg";
                 }
 
                 Response.Redirect("Default.aspx", false);

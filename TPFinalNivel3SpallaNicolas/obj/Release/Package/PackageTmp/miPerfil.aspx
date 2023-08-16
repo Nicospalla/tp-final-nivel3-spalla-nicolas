@@ -14,7 +14,7 @@
         <div class="col-2"></div>
         <div class="col-4">
             <div class="form-group">
-                <label for="txtEmail">Email</label>
+                <label for="lbltxtEmail">Email</label>
                 <asp:TextBox ID="txtEmail" TextMode="Email" Enabled="false" CssClass="form-control" runat="server"></asp:TextBox>
             </div>
             <div class="form-group" style="margin-top: 5%;">
@@ -30,11 +30,12 @@
                     <div class="form-group" style="margin-top: 5%; width: auto;">
                         <label for="txtPass">Password</label>
                         <asp:TextBox ID="txtPass" TextMode="Password" CssClass="form-control" runat="server"></asp:TextBox>
+                        <asp:Label Text="" ID="lblPass" ForeColor="Red" runat="server" />
                     </div>
                 </div>
                 <div class="col-2" style="width: auto;">
                     <div class="form-group" style="margin-top: 5%;">
-                        <label for="txtPass2">Repita Password</label>
+                        <label for="txtPass2" >Repita Password</label>
                         <asp:TextBox ID="txtPass2" TextMode="Password" CssClass="form-control" runat="server"></asp:TextBox>
                     </div>
                 </div>
@@ -48,7 +49,7 @@
         <div class="col-4" style="text-align: center;">
             <div class="mb-3">
                 <label for="txtUrlImagen" class="form-label">Imagen Perfil</label>
-                <asp:TextBox ID="txtUrlImagen" OnTextChanged="txtUrlImagen_TextChanged" AutoPostBack="true" CssClass="form-control" runat="server"></asp:TextBox>
+                <input id="inputPerfil" type="file" class="form-control" runat="server" />
             </div>
             <div class="mb-3">
                 <asp:Image ID="imagenPerfil" Style="max-width: 300px; max-height: 300px;"

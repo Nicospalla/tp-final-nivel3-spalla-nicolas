@@ -19,7 +19,7 @@ namespace TPFinalNivel3SpallaNicolas
 
             if (exc is HttpUnhandledException)
             {
-                Session.Add("errorGenerico", exc);
+                Session.Add("errorGenerico", exc.ToString());
                 Server.Transfer("error.aspx", true);   
             }
         }
